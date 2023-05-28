@@ -4,8 +4,10 @@ import { useShoppingCard } from "../context/shoppingCartContext";
 
 export function Navbar() {
 
-	const {openCart, closeCart, cartQuantity} = useShoppingCard();
+	const {openCart, closeCart, cartQuantity} = useShoppingCard(); // context imports
 
+	// this is all a bootstrap components, named NavBS
+	// it has all these inner mini funcs that helps us create links
 	return (
 		<NavBS sticky="top" className="bg-white shadow-sm mb-3">
 			<Container>
@@ -19,7 +21,8 @@ export function Navbar() {
 					<Nav.Link to="/about" as={NavLink}>
 						About
 					</Nav.Link>
-				</Nav>
+				</Nav> 
+				{/* if cart items are more than one then only we want to display the cart icon */}
 				{cartQuantity > 0 && (
 				<Button
 					onClick={openCart}

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+
+// a combo of two hooks that helps us in storing everything together in local storage
+// <T> means generic state basically "any"
 export function useLocalStorage<T>(key:string, initialValue:T | (() => T)) {
     
     const [value, setValue] = useState<T>(() =>{
@@ -7,6 +10,7 @@ export function useLocalStorage<T>(key:string, initialValue:T | (() => T)) {
 
         if (jsonValue !== null){ return JSON.parse(jsonValue);}
 
+        // boiler plate TP code to make sure it doesn't scream
         if (typeof initialValue === "function" ){
             return (initialValue as () => T);
         }
@@ -15,12 +19,12 @@ export function useLocalStorage<T>(key:string, initialValue:T | (() => T)) {
         }
     })
 
-
+    // will set item each time any of these value changes
     useEffect(() => {
         localStorage.setItem(key, JSON.stringify(value));
     }, [key, value])
 
-
+    
     return [value, setValue] as [typeof value, typeof setValue];
     
 }

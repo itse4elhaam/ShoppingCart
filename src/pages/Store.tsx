@@ -2,6 +2,9 @@ import storeItems from "../data/items.json";
 import { Col, Row } from "react-bootstrap";
 import { StoreItem } from "../components/storeItem";
 
+
+// Row is a bootstrap component that creates a row, same goes with col
+// We're getting storeItem from the data source and iterating over it to display the col
 export function Store() {
 	return (
 		<>

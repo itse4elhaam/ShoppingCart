@@ -9,6 +9,8 @@ type storeItemProps = {
 	imgUrl: string;
 };
 
+// we're getting these properties for each store item and we're creating them and exporting
+// on the other end we're doing it for each store item (fetched from the item.json)
 export function StoreItem({ id, name, price, imgUrl }: storeItemProps) {
 	const {
 		getItemQuantity,
@@ -35,7 +37,7 @@ export function StoreItem({ id, name, price, imgUrl }: storeItemProps) {
 					</span>
 				</Card.Title>
 
-				{/* if quanuty is zero we render add or cart otherwise remove or add buttons alongside item count */}
+				{/* if items are zero we render add or cart otherwise remove or add buttons alongside item count */}
 				<div className="mt-auto">
 					{quantity === 0 ? (
 						<Button

@@ -6,6 +6,9 @@ import { About } from "./pages/About";
 import { Navbar } from "./components/NavBar";
 import { ShoppingCardProvider } from "./context/shoppingCartContext";
 
+
+// container is a bootstrap class
+// Routes wraps all of the routes inside it and is responsible for all the seamless page switching
 function App() {
 	return (
 		<ShoppingCardProvider>

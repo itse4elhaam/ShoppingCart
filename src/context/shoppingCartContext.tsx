@@ -2,6 +2,8 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import ShoppingCart from "../components/ShoppingCart";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 
+// this all is boilerplate TP code to tell which types we want to use
+
 type ShoppingCartProviderProps = {
 	children: ReactNode;
 };
@@ -22,6 +24,9 @@ type ShoppingCarContext = {
 	cartItems: CartItem[];
 };
 
+// now we're creating a context, we're doing it to avoid prop drilling 
+// we want some data to be available through out the components so we create a context object
+// this way we can get whatever we want in a certain component
 const ShoppingCartContext = createContext({} as ShoppingCarContext);
 
 export function useShoppingCard() {
@@ -97,6 +102,8 @@ export function ShoppingCardProvider({ children }: ShoppingCartProviderProps) {
 		});
 	}
 
+
+	// exporting out everything and can be imported as much and where needed
 	return (
 		<ShoppingCartContext.Provider
 			value={{
