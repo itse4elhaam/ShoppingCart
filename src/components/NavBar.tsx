@@ -4,7 +4,7 @@ import { useShoppingCard } from "../context/shoppingCartContext";
 
 export function Navbar() {
 
-	const {openCart, closeCart, cartQuantity} = useShoppingCard(); // context imports
+	const {openCart, cartQuantity} = useShoppingCard(); // context imports
 
 	// this is all a bootstrap components, named NavBS
 	// it has all these inner mini funcs that helps us create links
